@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+const API_URL = "https://todo-backend-crna.onrender.com";
+
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -15,7 +17,7 @@ function Login() {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/api-token-auth/",
+        `${API_URL}/api-token-auth/`,
         {
           username: username,
           password: password
@@ -37,7 +39,11 @@ function Login() {
       console.error("Login error:", error);
 
       if (error.response) {
-        console.error("Server response:", error.response.data);
+        console.error(
+          "Server response:",
+          error.response.data
+        );
+
         alert("Invalid username or password.");
       } else {
         alert("Could not connect to Django.");
