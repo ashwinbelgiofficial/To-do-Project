@@ -148,6 +148,7 @@ MAILERS = {
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "https://to-do-project-5rp5pr5d4-black-spirate.vercel.app",
+    "https://to-do-project-b194hi2li-black-spirate.vercel.app",
 ]
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
